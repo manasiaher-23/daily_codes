@@ -5,8 +5,6 @@ import java.util.*;
 public class Nth_largest {
 
     static void NthLarge(int[] arr, int N) {
-
-        System.out.println();
         System.out.println("Sorting array in desending order:");
         for (int i = 0; i < arr.length - 1; i++) {
             for (int j = 0; j < arr.length - i - 1; j++) {
@@ -23,11 +21,7 @@ public class Nth_largest {
             System.out.print(i + " ");
         }
         System.out.println("Nth largest:");
-        /*
-         * if (N <= arr.length) {
-         * System.out.println(arr[N - 1]);
-         * }else{
-         */
+       
         int cnt = 0;
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] > arr[N]) {
@@ -39,10 +33,8 @@ public class Nth_largest {
             }
 
         }
-        // System.out.println(N);
+       
     }
-
-    // }
 
     public static void main(String[] args) {
         Scanner o = new Scanner(System.in);
