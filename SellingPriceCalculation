@@ -1,0 +1,24 @@
+
+class Main {
+    public static void main(String[] args) {
+        System.out.println("Try programiz.pro");
+        String s="ansba542ab2";
+        int sum=0;
+        StringBuilder dig=new StringBuilder();
+        for(int i=0;i<s.length();i++){
+            char res=s.charAt(i);
+            if(Character.isDigit(res)){
+                dig.append(res);
+                }else{
+                    if(dig.length()>0){
+                    sum+=Integer.parseInt(dig.toString());
+                    dig.setLength(0);
+                 }
+            }
+        }
+        if(dig.length()>0){
+                    sum+=Integer.parseInt(dig.toString());
+                    dig.setLength(0); }
+         System.out.println(sum);
+    }
+}
