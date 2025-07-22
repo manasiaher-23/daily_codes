@@ -1,0 +1,42 @@
+import java.util.*;
+
+public class MountainRange {
+
+    public static int isMountainValleyPattern(int[] arr) {
+        int[] ori = Arrays.copyOf(arr, arr.length);
+        if (arr.length != 1) {
+
+            int l = 0;
+            int r = arr.length - 1;
+            while (l < r) {
+                int t = arr[l];
+                arr[l] = arr[r];
+                arr[r] = t;
+                l++;
+                r--;
+                // pali logic
+            }
+            if (Arrays.equals(ori, arr)) {
+                return 0;
+            } else {
+                return 1;
+            }
+        } else {
+            return 1;
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        int[] arr = new int[n];
+        if (n > 1) {
+            for (int i = 0; i < n; i++) {
+                arr[i] = scanner.nextInt();
+            }
+        }
+        scanner.close();
+        int result = isMountainValleyPattern(arr);
+        System.out.println(result);
+    }
+}
